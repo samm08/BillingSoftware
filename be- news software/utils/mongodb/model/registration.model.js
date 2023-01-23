@@ -35,5 +35,5 @@ const schema = new Schema({
     }
 },{timestamps: true});
 
-const _model = model("company", schema);
+const _model = model("companies", schema);
 module.exports = _model

@@ -1,4 +1,5 @@
-const indexDao = require('../../utils/mongodb/indexDao')
+const indexDao = require('../../utils/mongodb/indexDao');
+const { MongoError } = require('../../utils/handler/error/index')
 
 const registerCompanyDAL = async(reqBody) => {
 
@@ -6,7 +7,7 @@ const registerCompanyDAL = async(reqBody) => {
         let result = await indexDao.registerCompany(reqBody);
         return result;
     } catch (error) {
-        throw error;
+        throw new MongoError(error);
     }
 
 }

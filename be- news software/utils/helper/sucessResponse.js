@@ -1,4 +1,4 @@
-module.exports = (error, req, res) => {
+module.exports = (req, res) => {
     let msg = "Reponse genrated Successfully";
     if (!res.locals.rootData) {
         msg = "Root is not Set";
@@ -9,9 +9,9 @@ module.exports = (error, req, res) => {
     }
     const response = {
         success : true,
-        displayMessage: res.locals.displayMessage || "",
+        displayMessage: res.locals.rootData || "",
         message: msg,
-        description: res.locals.description,
+        description: "NAX-0000",
         resultObj: res.locals.rootData || {}
     }
 
