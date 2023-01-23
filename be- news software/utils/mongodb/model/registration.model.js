@@ -1,19 +1,27 @@
 const {Schema, model } = require('mongoose')
 
 const schema = new Schema({
-    company_name : {
+    companyName : {
         type: String,
         required: true
     },
-    contact_person : {
+    firstName : {
         type: String,
         required: true
     },
-    contact_number : {
+    middleName : {
+        type: String,
+        required: false
+    },
+    lastName : {
+        type: String,
+        required: true
+    },
+    phoneNumber : {
         type: Number,
         required: true
     },
-    email_id : {
+    email : {
         type: String,
         required: true
     },
@@ -21,15 +29,15 @@ const schema = new Schema({
         type: String,
         required: true
     },
-    company_address : {
+    address : {
         type: String,
         required: true
     },
-    gst_no : {
+    gstNumber : {
         type: String,
         required: false
     },
-    registration_key : {
+    registrationKey : {
         type: String,
         required: true
     }

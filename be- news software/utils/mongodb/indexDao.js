@@ -3,9 +3,7 @@ const RegistrationModel = require('../mongodb/model/registration.model')
 const registerCompany = async (data) => {
     try {
         let isCompanyExist = await RegistrationModel.find(
-            { "company_name": data.companyName } ||
-            { "contact_number": data.phoneNumber } ||
-            { "contact_person": data.contact_person })
+            { "company_name": data.companyName } || { "contact_number": data.phoneNumber })
         if (!isCompanyExist.length > 0) {
             let companyData = new RegistrationModel(data)
             return companyData.save();
